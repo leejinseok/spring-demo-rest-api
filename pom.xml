@@ -22,9 +22,9 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <spring-plugin.version>2.0.0.BUILD-SNAPSHOT</spring-plugin.version>
     <java.version>11</java.version>
   </properties>
-
 
   <dependencies>
     <dependency>
