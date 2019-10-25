@@ -4,6 +4,7 @@ import com.example.demo.accounts.Account;
 import com.example.demo.accounts.AccountRole;
 import com.example.demo.accounts.AccountService;
 import com.example.demo.common.AppProperties;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -16,6 +17,11 @@ import java.util.Set;
 
 @Configuration
 public class AppConfig {
+
+  @Bean
+  public ModelMapper modelMapper() {
+    return new ModelMapper();
+  }
 
   @Bean
   public PasswordEncoder passwordEncoder() {
