@@ -8,9 +8,12 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Builder @AllArgsConstructor @NoArgsConstructor
-@Getter @Setter @EqualsAndHashCode(of = "id")
 @Entity
+@Builder
+@AllArgsConstructor @NoArgsConstructor
+@EqualsAndHashCode(of = "id")
+@Getter @Setter
+@ToString
 public class Event {
 
   @Id @GeneratedValue

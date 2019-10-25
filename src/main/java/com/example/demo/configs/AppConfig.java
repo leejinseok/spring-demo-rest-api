@@ -52,6 +52,8 @@ public class AppConfig {
           .password(appProperties.getUserPassword())
           .roles(Set.of(AccountRole.USER))
           .build();
+
+        System.out.println("user: " + user.toString());
         accountService.saveAccount(user);
       }
     };
