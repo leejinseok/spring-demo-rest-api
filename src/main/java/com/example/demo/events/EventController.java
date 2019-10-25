@@ -4,9 +4,9 @@ import com.example.demo.accounts.Account;
 import com.example.demo.accounts.CurrentUser;
 import com.example.demo.common.ErrorResource;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.MediaTypes;
-import org.springframework.hateoas.server.mvc.ControllerLinkBuilder;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -29,6 +29,7 @@ public class EventController {
   private final ModelMapper modelMapper;
   private final EventValidator eventValidator;
 
+  @Autowired
   public EventController(EventRepository eventRepository, ModelMapper modelMapper, EventValidator eventValidator) {
     this.eventRepository = eventRepository;
     this.modelMapper = modelMapper;
@@ -64,5 +65,4 @@ public class EventController {
   private ResponseEntity badRequest(Errors errors) {
     return ResponseEntity.badRequest().body(new ErrorResource(errors));
   }
-
 }
