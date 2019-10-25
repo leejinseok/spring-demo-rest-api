@@ -3,6 +3,7 @@ package com.example.demo.accounts;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
+import org.springframework.security.core.userdetails.User;
 
 import java.io.IOException;
 

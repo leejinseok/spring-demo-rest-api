@@ -10,11 +10,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class AccountService implements UserDetailsService {
 
-  @Autowired
-  AccountRepository accountRepository;
+  private final AccountRepository accountRepository;
+  private final PasswordEncoder passwordEncoder;
 
   @Autowired
-  PasswordEncoder passwordEncoder;
+  public AccountService(AccountRepository accountRepository, PasswordEncoder passwordEncoder) {
+    this.accountRepository = accountRepository;
+    this.passwordEncoder = passwordEncoder;
+  }
 
   public Account saveAccount(Account account) {
     account.setPassword(this.passwordEncoder.encode(account.getPassword()));
