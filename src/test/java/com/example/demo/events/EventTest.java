@@ -33,7 +33,7 @@ public class EventTest {
   }
 
   @Test
-  @Parameters
+  @Parameters(method = "parametersForTestFree")
   public void testFree(int basePrice, int maxPrice, boolean isFree) {
     Event event = Event.builder()
       .basePrice(basePrice)
